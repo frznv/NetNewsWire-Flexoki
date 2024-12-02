@@ -1,4 +1,6 @@
-/* Shared iOS and macOS CSS rules. Platform specific rules are at the bottom of this file. */
+html {
+	min-width: 100%;
+}
 
 body {
 	margin-left: auto;
@@ -48,6 +50,7 @@ a:hover {
 	--link-color: rgb(36, 131, 123);
 	--link-color-visited: rgb(94, 64, 157);
 	--table-cell-border-color: rgb(230, 228, 217);
+	--text-highlight: rgb(227, 209, 147);
 }
 
 @media(prefers-color-scheme: dark) {
@@ -66,6 +69,7 @@ a:hover {
 		--link-color: rgb(58, 169, 159);
 		--link-color-visited: rgb(139, 126, 200);
 		--table-cell-border-color: rgb(40, 39, 38);
+		--text-highlight: rgb(208, 162, 21);
 	}
 }
 
@@ -88,6 +92,10 @@ body code, body pre {
 
 body > .systemMessage {
 	color: var(--system-message-color);
+}
+
+mark {
+	background-color: var(--text-highlight);
 }
 
 .feedlink a:link, .feedlink a:visited {
@@ -188,6 +196,7 @@ pre code {
  could have been used. However, then the inter-cell borders
  overlap the table border, which looks bad.
  */
+ 
 .nnw-overflow table {
 	margin-bottom: 1px;
 	border-spacing: 0;
@@ -431,7 +440,6 @@ a.footnote:hover,
 	.nnw-overflow table {
 		border: 1px solid var(--accent-color);
 	}
-
 }
 
 /* macOS Specific */
